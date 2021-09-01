@@ -913,7 +913,7 @@ void saveTransformToFile(const std::string& filename,
       file << t[i] << " ";
     }
     ESP_DEBUG() << "Transformation matrix saved to" << filename << ":"
-                << Eigen::Map<const esp::mat4f>(transform.data());
+                << transform;
   };
   save(agentTransform);
   save(sensorTransform);
@@ -962,7 +962,7 @@ bool loadTransformFromFile(const std::string& filename,
     }
     transform = temp;
     ESP_DEBUG() << "Transformation matrix loaded from" << filename << ":"
-                << Eigen::Map<esp::mat4f>(transform.data());
+                << transform;
     return true;
   };
   // NOTE: load Agent first!!
