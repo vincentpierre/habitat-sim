@@ -177,7 +177,7 @@ commands:
       - restore_cache:
           keys:
             - ccache-{{ arch }}-{{ .Branch }}-{{ .BuildNum }}
-            - ccache-{{ arch }}-{{ .Branch }}
+            - ccache-{{ arch }}-{{ .Branch }}-
             - ccache-{{ arch }}-master
           paths:
             - /home/circleci/.ccache
